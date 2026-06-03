@@ -1,4 +1,4 @@
-package com.example.dsmconvocatoria2.models.ui.llbres
+package com.example.dsmconvocatoria2.models.ui.llibres
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

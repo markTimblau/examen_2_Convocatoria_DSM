@@ -1,6 +1,5 @@
-package com.example.dsmconvocatoria2.models.ui.llbres
+package com.example.dsmconvocatoria2.models.ui.llibres
 
-import android.app.Dialog
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
@@ -9,13 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.chip.ChipGroup
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dsmconvocatoria2.R
 import com.example.dsmconvocatoria2.models.Genere
 import com.example.dsmconvocatoria2.objects.LlibresRepository
 import com.google.android.material.bottomappbar.BottomAppBar
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.chip.Chip
 

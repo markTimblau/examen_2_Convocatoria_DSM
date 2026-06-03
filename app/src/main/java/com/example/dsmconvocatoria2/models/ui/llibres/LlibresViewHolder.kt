@@ -1,4 +1,4 @@
-package com.example.dsmconvocatoria2.models.ui.llbres
+package com.example.dsmconvocatoria2.models.ui.llibres
 
 import android.view.View
 import android.widget.TextView
@@ -6,7 +6,6 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dsmconvocatoria2.R
 import com.example.dsmconvocatoria2.models.Estat
-import com.example.dsmconvocatoria2.models.Genere
 import com.example.dsmconvocatoria2.models.Llibre
 
 class LlibreViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
