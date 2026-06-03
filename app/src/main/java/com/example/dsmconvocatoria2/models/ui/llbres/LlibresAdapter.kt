@@ -1,6 +1,10 @@
 package com.example.dsmconvocatoria2.models.ui.llbres
 
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dsmconvocatoria2.R
+import com.example.dsmconvocatoria2.models.Llibre
 
 class LlibresAdapter : RecyclerView.Adapter<LlibreViewHolder>() {
 
