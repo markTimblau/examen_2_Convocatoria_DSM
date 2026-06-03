@@ -10,6 +10,7 @@ import com.google.android.material.chip.ChipGroup
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dsmconvocatoria2.R
 import com.example.dsmconvocatoria2.models.Genere
 import com.example.dsmconvocatoria2.objects.LlibresRepository
@@ -61,7 +62,7 @@ class LlibresFragment : Fragment() {
                 else -> null
 
             }
-            Toast.makeText(this, selectedFragment, Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, selectedFragment, Toast.LENGTH_SHORT).show()
 
             true
 
@@ -69,7 +70,8 @@ class LlibresFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        //TODO: fer el setup del recycler view
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = adapter
     }
 
     private fun setupChips() {

@@ -6,12 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.dsmconvocatoria2.R
 import com.example.dsmconvocatoria2.models.Llibre
 
-class LlibresAdapter : RecyclerView.Adapter<LlibreViewHolder>() {
-
-    private var llibres = listOf<Llibre>()
+class LlibresAdapter(private val onLlibreClick: (Llibre) -> Unit) : RecyclerView.Adapter<LlibreViewHolder>() {
+    private var llistaLlibres: List<Llibre> = emptyList()
 
     fun setLlibres(nousLlibres: List<Llibre>) {
-        llibres = nousLlibres
+        llistaLlibres = nousLlibres
         notifyDataSetChanged()
     }
 
@@ -20,9 +19,13 @@ class LlibresAdapter : RecyclerView.Adapter<LlibreViewHolder>() {
             .inflate(R.layout.item_llibre, parent, false)
         return LlibreViewHolder(view)
     }
+    override fun getItemCount(): Int= llistaLlibres.size
 
     override fun onBindViewHolder(holder: LlibreViewHolder, position: Int) {
-        holder.renderitza(llibres[position])
+        val llibre = llistaLlibres[position]
+        holder.bind(llibre)
+        holder.itemView.setOnClickListener {
+            onLlibreClick(llibre)
+        }
     }
-
 }
