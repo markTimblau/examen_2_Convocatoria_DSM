@@ -1,6 +1,6 @@
 package com.example.dsmconvocatoria2.models.ui.llbres
 
-import LlibresAdapter
+import android.app.Dialog
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
@@ -9,9 +9,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.chip.ChipGroup
 import android.os.Bundle
 import android.view.View
-import androidx.recyclerview.widget.LinearLayoutManager
+import android.widget.Toast
 import com.example.dsmconvocatoria2.R
 import com.example.dsmconvocatoria2.models.Genere
+import com.example.dsmconvocatoria2.objects.LlibresRepository
+import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.chip.Chip
 
 class LlibresFragment : Fragment() {
@@ -20,6 +24,8 @@ class LlibresFragment : Fragment() {
     private lateinit var chipGroup: ChipGroup
     private lateinit var toolbar: Toolbar
     private lateinit var adapter: LlibresAdapter
+
+    private lateinit var bottomAppBar: BottomAppBar
     private var genereSeleccionat: Genere? = null
 
     override fun onCreateView(
@@ -35,11 +41,31 @@ class LlibresFragment : Fragment() {
 
         toolbar = view.findViewById(R.id.toolbar)
         recyclerView = view.findViewById(R.id.recyclerview)
-        chipGroup = view.findViewById(R.id.chipgroup)
+        chipGroup = view.findViewById(R.id.chipList)
 
         setupRecyclerView()
         setupChips()
         setupToolbarBehavior()
+        setupBottomAppBar()
+    }
+
+    private fun setupBottomAppBar() {
+
+        val BNMenu: BottomNavigationView = view?.findViewById(R.id.BNMenu) ?: return
+
+        BNMenu.setOnItemSelectedListener { item ->
+            val selectedFragment: String? = when (item.itemId) {
+                R.id.IHome -> "Home seleccionat"
+                R.id.ISearch -> "Search seleccionat"
+                R.id.IFavorite -> "Favorite seleccionat"
+                else -> null
+
+            }
+            Toast.makeText(this, selectedFragment, Toast.LENGTH_SHORT).show()
+
+            true
+
+        }
     }
 
     private fun setupRecyclerView() {
